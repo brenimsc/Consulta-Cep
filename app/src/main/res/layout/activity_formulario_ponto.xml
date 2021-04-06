@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormularioPontoActivity">
+
+    <ImageView
+        android:layout_marginTop="15dp"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/rating"/>
+
+    <TextView
+        android:paddingTop="170dp"
+        android:id="@+id/referencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagemCep"
+        android:text="Ponto de Referencia"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/referenciaEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/edit_redondo_ref"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/referencia"/>
+
+    <TextView
+        android:layout_marginTop="4dp"
+        android:id="@+id/rua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/referencia"
+        app:layout_constraintEnd_toEndOf="@+id/referencia"
+        app:layout_constraintTop_toBottomOf="@id/referenciaEdt"
+        android:text="Rua"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/ruaEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/edit_redondo_ref"
+        android:inputType="textCapWords"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/rua"/>
+
+    <TextView
+        android:layout_marginTop="4dp"
+        android:id="@+id/bairro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/referencia"
+        app:layout_constraintEnd_toEndOf="@id/referencia"
+        app:layout_constraintTop_toBottomOf="@id/ruaEdt"
+        android:text="Bairro"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/bairroEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/edit_redondo_ref"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:inputType="textCapWords"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/bairro"/>
+
+    <TextView
+        android:layout_marginTop="4dp"
+        android:id="@+id/cidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/bairro"
+        app:layout_constraintEnd_toEndOf="@id/bairro"
+        app:layout_constraintTop_toBottomOf="@id/bairroEdt"
+        android:text="Cidade"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/cidadeEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/edit_redondo_ref"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:inputType="textCapWords"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/cidade"/>
+
+    <TextView
+        android:layout_marginTop="4dp"
+        android:id="@+id/estado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/cidade"
+        app:layout_constraintEnd_toEndOf="@id/cidade"
+        app:layout_constraintTop_toBottomOf="@id/cidadeEdt"
+        android:text="Estado"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/estadoEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/edit_redondo_ref"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:inputType="textCapWords"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/estado"/>
+
+    <Button
+        android:layout_marginTop="15dp"
+        android:id="@+id/buttonSalvaRef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:background="#EDD60A"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/estadoEdt"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

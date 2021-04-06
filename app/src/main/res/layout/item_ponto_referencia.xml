@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="false"
+        app:cardPreventCornerOverlap="true"
+        app:cardBackgroundColor="#F3F3F3"
+        app:cardCornerRadius="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/nomeReferencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Casa do Breno"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingLeft="16dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <View
+                android:id="@+id/linha"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toStartOf="@id/nomeReferencia"
+                app:layout_constraintEnd_toEndOf="@+id/rua"
+                app:layout_constraintBottom_toBottomOf="@+id/nomeReferencia"
+                android:background="@color/black"/>
+            <View
+                android:id="@+id/linhaAmarela"
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                app:layout_constraintStart_toStartOf="@id/nomeReferencia"
+                app:layout_constraintEnd_toEndOf="@+id/nomeReferencia"
+                app:layout_constraintBottom_toBottomOf="@+id/linha"
+                android:background="@color/purple_500"/>
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/valorCampo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:text="Jayme Pimentel - Jardim Paulista, Garça - SP "
+                android:paddingLeft="5dp"
+                app:layout_constraintTop_toBottomOf="@id/nomeReferencia"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

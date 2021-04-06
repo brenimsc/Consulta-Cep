@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="false"
+    app:cardPreventCornerOverlap="true"
+    app:cardBackgroundColor="#F3F3F3"
+    app:cardCornerRadius="5dp">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+      <TextView
+        android:id="@+id/rua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jayme Pimentel"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:paddingLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/bairro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bairro:"
+        android:textSize="20sp"
+        android:paddingLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@id/rua"/>
+
+    <TextView
+        android:id="@+id/bairroValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@id/rua"
+        app:layout_constraintStart_toEndOf="@id/bairro"/>
+
+    <TextView
+        android:id="@+id/cidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cidade: "
+        android:textSize="20sp"
+        android:paddingLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@id/bairro"/>
+
+    <TextView
+        android:id="@+id/cidadeValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@id/bairro"
+        app:layout_constraintStart_toEndOf="@id/cidade"/>
+
+    <TextView
+        android:id="@+id/estado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" - "
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/cidadeValor"
+        app:layout_constraintTop_toBottomOf="@id/bairro"
+        app:layout_constraintBottom_toBottomOf="@id/cidade"/>
+
+    <TextView
+        android:id="@+id/estadoValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SP"
+        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@id/bairro"
+        app:layout_constraintStart_toEndOf="@id/estado"/>
+
+    <TextView
+        android:id="@+id/cep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CEP:"
+        android:textSize="22sp"
+        android:paddingLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cidade"/>
+
+    <TextView
+        android:id="@+id/cepValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@id/cidade"
+        app:layout_constraintStart_toEndOf="@id/cep"/>
+
+    <TextView
+        android:id="@+id/ddd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DDD do local:"
+        android:textSize="22sp"
+        android:paddingLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cep"/>
+
+    <TextView
+        android:id="@+id/dddValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@id/cep"
+        app:layout_constraintStart_toEndOf="@id/ddd"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="parent"
+        android:paddingLeft="338dp"
+        android:layout_marginTop="53dp"
+        android:src="@drawable/seta24"/>
+
+
+</androidx.cardview.widget.CardView>
