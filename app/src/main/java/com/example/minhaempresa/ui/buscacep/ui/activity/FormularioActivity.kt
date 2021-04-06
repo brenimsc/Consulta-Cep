@@ -36,7 +36,7 @@ class FormularioActivity : AppCompatActivity() {
                 else {
                     Toast.makeText(this, "CEP não encontra para o endereço!", Toast.LENGTH_LONG).show()
                     val list: List<Endereco> = listOf()
-                    configuraLista(list)
+                    configuraLista(list) // Configura lista vazia
                 }
             })
         }
