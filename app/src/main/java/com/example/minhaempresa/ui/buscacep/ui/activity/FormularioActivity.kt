@@ -30,13 +30,12 @@ class FormularioActivity : AppCompatActivity() {
         buscaButton.setOnClickListener {
             this@FormularioActivity.escondeTeclado()
             val (uf, cidade, rua) = buscaInfoTeclado()
-            CepWebClient(this).listaEnderecos(uf, cidade, rua, {listaEndereco ->
-                if(listaEndereco.size>0)
+            CepWebClient(this).listaEnderecos(uf, cidade, rua, { listaEndereco ->
+                if (listaEndereco.size > 0)
                     configuraLista(listaEndereco)
-                else {
-                    Toast.makeText(this, "CEP não encontra para o endereço!", Toast.LENGTH_LONG).show()
-                    val list: List<Endereco> = listOf()
-                    configuraLista(list)
+                if (listaEndereco.size ==0 || listaEndereco[0].logradouro.isEmpty()){
+                    Toast.makeText(this, "CEP não encontra para o endereço", Toast.LENGTH_SHORT).show()
+                    configuraListaVazia()
                 }
             })
         }
@@ -49,12 +48,12 @@ class FormularioActivity : AppCompatActivity() {
         return Triple(uf, cidade, rua)
     }
 
-    private fun configuraLista(listaEndereco: List<Endereco>){
+    private fun configuraLista(listaEndereco: List<Endereco>) {
         val listaEnderecos = listaEndereco
         val recyclerView = listaRecyclerViewFormulario
         val adapter = ListaCepAdapter(listaEnderecos, this)
         recyclerView.adapter = adapter
-        adapter.setOnItemClickListener(object : OnItemClickListener{
+        adapter.setOnItemClickListener(object : OnItemClickListener {
             override fun onItemClick(endereco: Endereco) {
                 val intent = Intent(this@FormularioActivity, FormularioPontoActivity::class.java)
                 val enderecoEmJson: String = converteEnderecoEmJson(endereco)
@@ -64,7 +63,7 @@ class FormularioActivity : AppCompatActivity() {
 
         })
 
-        adapter.setOnItemLongClickListener(object : OnItemLongClickListener{
+        adapter.setOnItemLongClickListener(object : OnItemLongClickListener {
             override fun onItemLongClick(endereco: Endereco) {
                 configuraDialogAbrirMapa(endereco)
             }
@@ -96,4 +95,11 @@ class FormularioActivity : AppCompatActivity() {
         return enderecoEmJson
     }
 
+    private fun configuraListaVazia() {
+        val listaEnderecos: List<Endereco> = listOf()
+        val recyclerView = listaRecyclerViewFormulario
+        val adapter = ListaCepAdapter(listaEnderecos, this)
+        recyclerView.adapter = adapter
+
+    }
 }

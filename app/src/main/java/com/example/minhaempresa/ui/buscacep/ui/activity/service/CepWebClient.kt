@@ -75,6 +75,10 @@ class CepWebClient(private val context: Context) {
                             dialog.dismiss()
                         }
                     } else {
+                        val endereco = Endereco("", "", "", "", "", ""
+                        , Double.MIN_VALUE, "", "", Double.MIN_VALUE, "")
+                        val list = listOf(endereco)
+                        lista(list)
                         dialog.dismiss()
                         mostraErroCep()
                     }
@@ -82,6 +86,10 @@ class CepWebClient(private val context: Context) {
             }
 
             override fun onFailure(call: Call<List<Endereco>>, t: Throwable) {
+                val enderecos = Endereco("", "", "", "", "", ""
+                        , Double.MIN_VALUE, "", "", Double.MIN_VALUE, "")
+                val list = listOf(enderecos)
+                lista(list)
                 mostraErroEnd()
                 dialog.dismiss()
             }
@@ -89,18 +97,18 @@ class CepWebClient(private val context: Context) {
     }
 
     private fun mostraErro(){
-        Toast.makeText(context, "Não foi possivel realizar a consulta", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Não foi possivel realizar a consulta", Toast.LENGTH_SHORT).show()
     }
     private fun mostraErroFormato(){
-        Toast.makeText(context, "Formato de CEP inválido", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Formato de CEP inválido", Toast.LENGTH_SHORT).show()
     }
 
     private fun mostraErroCep(){
-        Toast.makeText(context, "Não foi encontrado este endereço", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Não foi encontrado este endereço", Toast.LENGTH_SHORT).show()
     }
 
     private fun mostraErroEnd(){
-        Toast.makeText(context, "Endereço invalido", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Endereço invalido", Toast.LENGTH_SHORT).show()
     }
 }
 

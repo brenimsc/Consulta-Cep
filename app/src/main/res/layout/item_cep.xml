@@ -95,6 +95,25 @@
         app:layout_constraintTop_toBottomOf="@id/cidade"/>
 
     <TextView
+        android:id="@+id/cdMunicipio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cód. Municipio:"
+        android:textSize="22sp"
+        android:paddingLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@id/ddd"/>
+
+    <TextView
+        android:id="@+id/valorMunicipio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@id/ddd"
+        app:layout_constraintStart_toEndOf="@id/cdMunicipio"/>
+
+
+    <TextView
         android:id="@+id/cepValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,7 +138,7 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:paddingLeft="5dp"
-        app:layout_constraintTop_toBottomOf="@id/cep"
+        app:layout_constraintTop_toTopOf="@id/ddd"
         app:layout_constraintStart_toEndOf="@id/ddd"/>
 
 
@@ -132,7 +151,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="parent"
         android:paddingLeft="338dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="68dp"
         android:src="@drawable/seta24"/>
 
 

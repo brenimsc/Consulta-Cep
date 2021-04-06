@@ -52,6 +52,7 @@ class ListaCepActivity : AppCompatActivity() {
             } else{
                 cepEdt.error = "Preencha o campo"
                 Toast.makeText(this, "Digite algum CEP", Toast.LENGTH_SHORT).show()
+                configuraListaVazia(recyclerView)
             }
         }
 
@@ -104,13 +105,19 @@ class ListaCepActivity : AppCompatActivity() {
                 startActivity(intent)
                 }
             }
-
-
         })
+
+
+
+
 
         adapter.setOnItemLongClickListener(object : OnItemLongClickListener {
             override fun onItemLongClick(endereco: Endereco) {
+                if(endereco.erro==null)
                 configuraDialogAbrirMapa(endereco)
+                else{
+                    Toast.makeText(this@ListaCepActivity, "Sem endereço", Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onItemLongClick(referencia: Referencia) {
@@ -121,6 +128,7 @@ class ListaCepActivity : AppCompatActivity() {
 
 
     }
+
 
     private fun configuraDialogAbrirMapa(endereco: Endereco) {
         AlertDialog.Builder(this@ListaCepActivity)
@@ -140,5 +148,9 @@ class ListaCepActivity : AppCompatActivity() {
         return enderecoEmJson
     }
 
-
+    private fun configuraListaVazia(recyclerView : RecyclerView){
+        val listaEnderecos: List<Endereco> = listOf()
+        val adapter = ListaCepAdapter(listaEnderecos, this)
+        recyclerView.adapter = adapter
+}
 }

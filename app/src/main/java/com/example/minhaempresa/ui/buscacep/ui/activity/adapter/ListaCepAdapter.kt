@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.minhaempresa.ui.buscacep.R
+import com.example.minhaempresa.ui.buscacep.ui.activity.extension.ActivityExtension.DoubleExtension.formataNumero
 import com.example.minhaempresa.ui.buscacep.ui.activity.extension.ActivityExtension.StringExtension.verificaTamanho
 import com.example.minhaempresa.ui.buscacep.ui.activity.model.Endereco
 import kotlinx.android.synthetic.main.item_cep.view.*
@@ -59,6 +60,7 @@ class ListaCepAdapter(private val enderecos: List<Endereco>,
             val estado = itemView.estadoValor
             val cep = itemView.cepValor
             val ddd = itemView.dddValor
+            val codMunicipio = itemView.valorMunicipio
 
             itemView.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
@@ -77,7 +79,9 @@ class ListaCepAdapter(private val enderecos: List<Endereco>,
                 estado.text = enderecoRecebido.uf
                 cep.text = enderecoRecebido.cep
                 ddd.text = enderecoRecebido.ddd
+
                 if (endereco.erro == null) {  //caso endereco for vazio e fizer isso aqui vai quebrar
+                    codMunicipio.text = enderecoRecebido.ibge.formataNumero()
                     rua.text = enderecoRecebido.logradouro.verificaTamanho()
                     bairro.text = enderecoRecebido.bairro.verificaTamanho()
                     cidade.text = enderecoRecebido.localidade.verificaTamanho()
@@ -91,4 +95,5 @@ class ListaCepAdapter(private val enderecos: List<Endereco>,
 
 
 }
+
 }
