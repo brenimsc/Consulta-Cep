@@ -33,8 +33,8 @@ class FormularioActivity : AppCompatActivity() {
             CepWebClient(this).listaEnderecos(uf, cidade, rua, { listaEndereco ->
                 if (listaEndereco.size > 0)
                     configuraLista(listaEndereco)
-                if (listaEndereco.size ==0 || listaEndereco[0].logradouro.isEmpty()){
-                    Toast.makeText(this, "CEP não encontra para o endereço", Toast.LENGTH_SHORT).show()
+                if (listaEndereco.size ==0 || listaEndereco[0].cep.isEmpty()){
+                    Toast.makeText(this, "CEP não encontrado para o endereço", Toast.LENGTH_SHORT).show()
                     configuraListaVazia()
                 }
             })

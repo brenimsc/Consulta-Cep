@@ -50,8 +50,7 @@ class ListaCepActivity : AppCompatActivity() {
                     configuraLista(endereco, recyclerView)
                 })
             } else{
-                cepEdt.error = "Preencha o campo"
-                Toast.makeText(this, "Digite algum CEP", Toast.LENGTH_SHORT).show()
+                cepEdt.error = "Preencha este campo"
                 configuraListaVazia(recyclerView)
             }
         }
