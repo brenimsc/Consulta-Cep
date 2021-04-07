@@ -2,7 +2,6 @@ package com.example.minhaempresa.ui.buscacep.ui.activity.service
 
 import android.app.ProgressDialog
 import android.content.Context
-import android.util.Log
 import android.widget.Toast
 import com.example.minhaempresa.ui.buscacep.ui.activity.model.Cep
 import com.example.minhaempresa.ui.buscacep.ui.activity.model.Endereco
